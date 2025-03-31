@@ -1,10 +1,10 @@
 package controllers
 
 import (
+	"LostPaws/backend/config"
+	"LostPaws/backend/models"
 	"net/http"
 
-	"github.com/DanteBelli/LostPaws/config"
-	"github.com/DanteBelli/LostPaws/models"
 	"github.com/gin-gonic/gin"
 )
 
