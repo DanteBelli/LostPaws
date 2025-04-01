@@ -22,3 +22,12 @@ func GetDogs(c *gin.Context) {
 	config.DB.Find(&dogs)
 	c.JSON(http.StatusOK, dogs)
 }
+func GetDog(c *gin.Context) {
+	id := c.Param("id")
+	var dog models.Dog
+	if err := config.DB.First(&dog, id).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "No se encontro la mascota"})
+		return
+	}
+	c.JSON(http.StatusOK, dog)
+}
