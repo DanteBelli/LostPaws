@@ -31,3 +31,6 @@ func GetDog(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, dog)
 }
+func UpdateDog(c *gin.Context) {
+
+}
