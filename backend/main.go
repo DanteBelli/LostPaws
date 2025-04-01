@@ -10,6 +10,6 @@ func main() {
 	config.ConnectDB()
 	r := routes.SetupRouter()
 	port := "8080"
-	fmt.Printf("Servidor corriente en el puero", port)
-	r.Run(":", port)
+	fmt.Println("Servidor corriente en el puerto", port)
+	r.Run(":" + port)
 }
