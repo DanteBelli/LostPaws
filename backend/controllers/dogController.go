@@ -32,5 +32,21 @@ func GetDog(c *gin.Context) {
 	c.JSON(http.StatusOK, dog)
 }
 func UpdateDog(c *gin.Context) {
+	id := c.Param("id")
+	var dog models.Dog
 
+	if err := config.DB.First(&dog, id).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Mascota no Encontrada"})
+		return
+	}
+	var input struct {
+		Estado bool `json:"estado"`
+	}
+	if err := c.ShouldBindJSON(&input); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	dog.Estado = input.Estado
+	config.DB.Save(&dog)
+	c.JSON(http.StatusOK, gin.H{"mensaje": "Estado actualizado", "dog": dog})
 }

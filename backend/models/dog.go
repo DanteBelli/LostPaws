@@ -23,7 +23,7 @@ type Dog struct {
 	FechaSucesi       time.Time `json:"fecha"`
 	Tipo_Mascota      int8      `json:"tipoMascota"`
 	Sexo              int8      `json:"sexo"`
-	Estado            int8      `json:"estado"`
+	Estado            bool      `json:"estado"`
 	Castrado          bool      `json:"castrado"`
 	Sociable_Perros   bool      `json:"sociablePerro"`
 	Sociable_Personas bool      `json:"sociablePersona"`
