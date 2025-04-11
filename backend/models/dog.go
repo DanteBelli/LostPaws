@@ -12,7 +12,7 @@ type Dog struct {
 	Description       string    `json:"description"`
 	ImageUrl          string    `json:"image_url"`
 	Location          string    `json:"location"`
-	Status            bool      `json:"status"`
+	Status            int8      `json:"status"`
 	Nombre            string    `json:"nombre"`
 	RazaId            int8      `json:"raza"`
 	Tamanio           int8      `json:"tamanio"`
