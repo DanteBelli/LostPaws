@@ -16,7 +16,7 @@ func SetupRouter() *gin.Engine {
 		api.POST("/users", controllers.CreateUser)
 		api.GET("/users", controllers.GetUsers)
 		api.GET("/users/:id", controllers.GetUser)
-		api.PUT("/dogs/:id", controllers.UpdateDog)
+		api.PUT("/dogs/:id/status", controllers.UpdateDog)
 	}
 	return r
 }

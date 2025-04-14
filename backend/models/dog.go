@@ -8,24 +8,23 @@ import (
 
 type Dog struct {
 	gorm.Model
-	UserId            uint      `json:"user_id"`
-	Description       string    `json:"description"`
-	ImageUrl          string    `json:"image_url"`
-	Location          string    `json:"location"`
-	Status            bool      `json:"status"`
-	Nombre            string    `json:"nombre"`
-	RazaId            int8      `json:"raza"`
-	Tamanio           int8      `json:"tamanio"`
-	Color_Principal   int       `json:"color_principal"`
-	Color_Secundario  int       `json:"color_secundario"`
-	Color_Tercero     int       `json:"color_tercero"`
-	Dir               string    `string:"dir"`
-	FechaSucesi       time.Time `json:"fecha"`
-	Tipo_Mascota      int8      `json:"tipoMascota"`
-	Sexo              int8      `json:"sexo"`
-	Estado            bool      `json:"estado"`
-	Castrado          bool      `json:"castrado"`
-	Sociable_Perros   bool      `json:"sociablePerro"`
-	Sociable_Personas bool      `json:"sociablePersona"`
-	UbicacionActual   string    `json:"ubicacionActual"`
+	Id               uint      `json:"id"`
+	User_id          uint      `json:"user_id"`
+	Description      string    `json:"description"`
+	Location         string    `json:"location"`
+	ImageUrl         string    `json:"image_url"`
+	Status           bool      `json:"status"`
+	Name             string    `json:"name"`
+	Raza_id          int8      `json:"raza_id"`
+	Tamanio          int8      `json:"tamanio"`
+	Color_prim       int       `json:"color_prim"`
+	Color_Sec        int       `json:"color_sec"`
+	Color_Terc       int       `json:"color_terc"`
+	Fecha_enc        time.Time `json:"fecha_enc"`
+	Tipo_masc        int8      `json:"tipo_masc"`
+	Sexo             int8      `json:"sexo"`
+	Castrado         bool      `json:"castrado"`
+	SociablePerro    bool      `json:"sociable_perro" gorm:"type:boolean"`
+	SociablePersonas bool      `json:"sociable_personas" gorm:"type:boolean"`
+	Ubic_Actual      string    `json:"ubic_actual"`
 }
