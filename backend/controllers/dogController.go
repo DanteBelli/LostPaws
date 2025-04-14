@@ -40,7 +40,7 @@ func UpdateDog(c *gin.Context) {
 		return
 	}
 	var input struct {
-		Status int8 `json:"status"`
+		Status bool `json:"status"`
 	}
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
